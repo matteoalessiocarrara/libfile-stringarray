@@ -17,6 +17,15 @@ void EliminaFSArray(char **array);
 Altrimenti, l'ultimo non verrà considerato.
 * EliminaFSArray() esegue un free() su ogni elemento dell'array, e alla fine sull'array stesso, ma non mette a NULL i puntatori.
 
+### File
+
+* libfsa.c: contiene le funzioni, è l'unico da utilizzare con \#include
+* modificare.h: tutto ciò che dovreste modificare prima di usare le funzioni, si trova qui
+* main.c: funzione main() di esempio, può essere utilizzata per fare delle prove
+* def.h: file con alcuni define **da non modificare**.
+
+Libfsa.c usa i file def.h e modificare.h (dovrebbero essere nella stessa directory, ma questo è modificabile), main.c può essere eliminato.
+
 ### Return
 
 FileStringArray() restituisce un puntatore a **char se tutto va bene, altrimenti NULL.
