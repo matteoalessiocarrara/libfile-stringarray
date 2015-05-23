@@ -3,7 +3,7 @@ Funzioni in c per leggere e dividere un file di testo in un array di stringhe
 
 ### Sinossi
 
-#include "libfsa.c"
+\#include "libfsa.c"
 
 char** FileStringArray(const char _file[], const char separatoreElementi);
 long long unsigned NumeroElementiFSA(const char **array);
