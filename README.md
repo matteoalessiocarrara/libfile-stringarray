@@ -5,13 +5,13 @@ Funzioni in c per leggere e dividere un file di testo in un array di stringhe
 
 \#include "libfsa.c"
 
-char** FileStringArray(const char _file[], const char separatoreElementi);
-long long unsigned NumeroElementiFSA(const char **array);
+char** FileStringArray(const char _file[], const char separatoreElementi);  
+long long unsigned NumeroElementiFSA(const char **array);  
 void EliminaFSArray(char **array);
 
 ### Descrizione
 
-** Prima di tutto, dovreste modificare il file "modificare.h". (In realtà per ora non c'è niente da modificare, ma in futuro forse si) **
+**Prima di tutto, dovreste modificare il file "modificare.h". (In realtà per ora non c'è niente da modificare, ma in futuro forse si)**
 * FileStringArray() * trasforma il contenuto di un file di testo ASCII (una stringa) in un array di stringhe. Il file viene diviso utilizzando un carattere (chiamato appunto separatoreElementi).
 ** Attenzione **: il carattere che divide gli elementi deve essere presente ** dopo ogni elemento, anche dopo l'ultimo **.
 Altrimenti, l'ultimo non verrà considerato.
