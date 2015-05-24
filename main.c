@@ -20,9 +20,9 @@
  */
 
 /*Funzione main() di esempio*/
+#include "libfsa.c" /*Attenzione che deve essere il primo include*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "libfsa.c"
 
 int main(void)
 {
@@ -30,21 +30,26 @@ int main(void)
     long long unsigned i=0, nelem;
     switch(erroriFSA)
         {
-        case NESSUN_ELEMENTO:
+        case FILE_VUOTO:
 			printf("Il file è vuoto!\n");
             exit(EXIT_FAILURE);
-        case PROBLEMA_APERTURA_FILE:
+		case CARATTERI_MANCANTI:
+			printf("File troppo grande, alcuni caratteri finali saranno mancanti\n");
+			break;
+		case SEPARATORE_FINALE_MANCANTE:
+			printf("Separatore dopo l'ultimo elemento mancante, l'ultimo elemento verrà ignorato\n");
+			break;
+        case ERRORE_FOPEN:
             printf("Problema con l'apertura del file!\n");
             exit(EXIT_FAILURE);
-        case PROBLEMA_MALLOC:
+        case ERRORE_MALLOC:
             printf("Problema con malloc()!\n");
-            exit(EXIT_FAILURE);
-        case PROBLEMA_FILE:
-            printf("Problema con il file!\n");
             exit(EXIT_FAILURE);
 		case ERRORE_FREAD:
 			printf("Errore in fread()\n");
 			exit(EXIT_FAILURE);
+		case ERRORE_FTELLO:
+			printf("Errore in ftello()\n");
 		case NESSUN_ERRORE:
             printf("Tutto ok, nessun errore\n");
 			break;
@@ -54,5 +59,6 @@ int main(void)
 	nelem=NumeroElementiFSA(arrayprova);
 	printf("%llu elementi\n", nelem);
     for (i=0; i<nelem; i++) printf("Elemento %llu: %s\n", i+1, arrayprova[i]);
+	EliminaFSArray(arrayprova);
     return 0;
 }

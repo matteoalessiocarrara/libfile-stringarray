@@ -25,6 +25,8 @@
 #define DEF_H
 
 /*Define validi per FSA_OS*/
-#define FSA_OS_LINUX 1 /*Per pc con GNU/Linux, o Linux senza GNU, o magari anche os x... provate e fatemi sapere!*/
+#define FSA_OS_LINUX 1 
+/*Define validi per COMPILATORE*/
+#define COMPILATORE_GCC 1 
 
 #endif

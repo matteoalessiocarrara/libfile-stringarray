@@ -1,7 +1,5 @@
 /*
- * libfile-stringarray
- *
- * Copyright 2014-2015 Matteo Alessio Carrara <sw.matteoac@gmail.com>
+ * Copyright 2014-2015 Matteo Alessio Carrara <sw.matteoalessiocarrara@openmailbox.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,14 +17,15 @@
  * MA 02110-1301, USA.
  */
 
-/*Questo file contiene tutto quello che è possibile modificare senza creare problemi.*/
+/*Questo file contiene alcuni define che verranno attivati automaticamente. NON MODIFICARE*/
 
-#ifndef MODIFICARE_H
-#define MODIFICARE_H
-#include "def.h"
+#ifndef AUTODEF_H
+#define AUTODEF_H
 
-/*Modificare con l'os del pc dove verranno utilizzate le funzioni. Per gli os disponibili, vedere (ma non modificare!!) il file def.h*/ 
-#define FSA_OS FSA_OS_LINUX
-#define COMPILATORE COMPILATORE_GCC
+#include "modificare.h"
+
+#if FSA_OS==FSA_OS_LINUX
+#define POSIX
+#endif
 
 #endif
