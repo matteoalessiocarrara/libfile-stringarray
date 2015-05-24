@@ -6,8 +6,8 @@ Funzioni in c per leggere e dividere un file di testo in un array di stringhe
 \#include "libfsa.c"
 
 char** FileStringArray(const char _file[], const char separatoreElementi);  
-off_t NumeroElementiFSA(char \**array);  
-void EliminaFSArray(char \**array);
+off_t NumeroElementiFSA(char \*\*array);  
+void EliminaFSArray(char \*\*array);
 
 ### Descrizione
 
