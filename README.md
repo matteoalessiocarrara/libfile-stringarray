@@ -33,7 +33,7 @@ Libfsa.c richiede i file def.h, autodef.h e modificare.h (dovrebbero essere nell
 
 ### Return
 
-FileStringArray() restituisce un puntatore a **char se tutto va bene, altrimenti NULL.
+FileStringArray() restituisce un puntatore a \*char se tutto va bene, altrimenti NULL.
 
 ### Errori
 
